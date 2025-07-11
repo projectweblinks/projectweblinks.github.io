@@ -1,2 +1,2 @@
-# centillionnetworks.github.io
+# .github.io
 self hosting
