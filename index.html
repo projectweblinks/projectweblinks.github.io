@@ -1,7 +1,903 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Centillion Networks - Dashboard</title><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css rel=stylesheet><link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css rel=stylesheet><link href=https://centillionnetworks.com/wp-content/uploads/2023/03/cropped-fav_centNet-192x192.jpg rel=icon sizes=192x192><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;background:linear-gradient(135deg,#f5f7fa 0,#c3cfe2 100%);min-height:100vh}a{text-decoration:none}.logo{height:55px;width:auto;filter:drop-shadow(0 4px 8px rgba(0, 0, 0, .1))}.service-card{background:rgba(255,255,255,.9);border-radius:20px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);transition:all .3s ease}.service-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,.15)}.service-title{color:#333;font-weight:600}.service-btn{padding:12px;border:none;border-radius:12px;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;font-weight:500;transition:all .3s ease;position:relative;overflow:hidden;cursor:pointer;text-decoration:none;display:block;text-align:center}.service-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transition:left .5s}.service-btn:hover::before{left:100%}.service-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 25px rgba(102,126,234,.4);background:linear-gradient(135deg,#667eea 0,#764ba2 100%);border-color:transparent;color:#fff;text-decoration:none}.general-section{background:rgba(255,255,255,.9);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1);backdrop-filter:blur(10px)}.section-title{color:#333;font-weight:600}.general-btn{padding:20px;border:none;border-radius:15px;background:linear-gradient(135deg,#9a81da 0,#ee6108 100%);color:#fff;font-weight:600;transition:all .3s ease;position:relative;overflow:hidden;min-height:120px;text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center}.general-btn:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 15px 35px rgba(255,107,107,.4);background:linear-gradient(135deg,#ff6b6b 0,#667eea 100%);border-color:transparent;color:#fff;text-decoration:none}.general-btn::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,.2);border-radius:50%;transform:translate(-50%,-50%);transition:all .6s ease}.general-btn:hover::after{width:300px;height:300px}.project-matrix-icon{font-size:35px;height:45px;width:45px}.bright-speed-logo{width:35%}.line{width:100%;height:1px;background-color:#667eea;margin:20px 0}.globe-icon{color:#1382c9}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;opacity:0;transition:opacity .3s ease;align-items:center;justify-content:center}.modal.show{display:flex;opacity:1}.modal-backdrop{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);backdrop-filter:blur(10px)}.modal-content{position:relative;margin:20px;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-radius:24px;box-shadow:0 25px 50px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;max-height:calc(100vh - 40px);width:calc(100% - 40px);max-width:1200px;margin:20px auto;overflow:hidden;transform:scale(.9);transition:transform .3s ease;z-index:10000}.modal.show .modal-content{transform:scale(1)}.modal-header{display:flex;align-items:center;justify-content:space-between;padding:30px 40px;border-bottom:1px solid rgba(0,0,0,.1)}.modal-title{font-size:2rem;font-weight:700;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.modal-close{background:0 0;border:none;padding:10px;border-radius:50%;cursor:pointer;color:#666;transition:all .3s ease;width:40px;height:40px;display:flex;align-items:center;justify-content:center}.modal-close:hover{background:rgba(0,0,0,.1);color:#333}.modal-search{padding:30px 40px;border-bottom:1px solid rgba(0,0,0,.1)}.search-container{position:relative}.search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#666}.search-input{width:100%;padding:15px 15px 15px 50px;border:2px solid rgba(102,126,234,.2);border-radius:12px;font-size:16px;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);transition:all .3s ease}.search-input:focus{outline:0;border-color:#667eea;box-shadow:0 0 0 3px rgba(102,126,234,.1)}.modal-body{display:flex;flex:1;overflow:hidden}.user-list{width:50%;border-right:1px solid rgba(0,0,0,.1);overflow-y:auto}.user-list-container{padding:20px}.user-item{padding:20px;border-radius:12px;cursor:pointer;transition:all .3s ease;margin-bottom:10px;background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.05)}.user-item:hover{background:rgba(102,126,234,.1);transform:translateX(5px)}.user-item.selected{background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;box-shadow:0 10px 25px rgba(102,126,234,.3)}.user-item-header{display:flex;align-items:center;gap:15px}.user-avatar{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff}.user-item:not(.selected) .user-avatar{background:linear-gradient(135deg,#667eea 0,#764ba2 100%)}.user-item.selected .user-avatar{background:rgba(255,255,255,.2)}.user-info h3{font-size:18px;font-weight:600;margin-bottom:5px}.user-info p{font-size:14px;opacity:.8}.user-details{width:50%;overflow-y:auto}.user-details-container{padding:30px}.user-details-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#666;text-align:center}.user-details-placeholder svg{margin-bottom:20px;opacity:.5}.user-details-content{display:none}.user-details-content.show{display:block}.user-profile-header{background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;padding:30px;border-radius:16px;margin-bottom:30px;display:flex;align-items:center;gap:20px}.user-profile-avatar{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700}.user-profile-info h2{font-size:2rem;margin-bottom:5px}.user-profile-info p{font-size:1.2rem;opacity:.9}.user-details-section{background:rgba(255,255,255,.6);border-radius:12px;padding:25px;margin-bottom:20px}.section-header{display:flex;align-items:center;gap:10px;margin-bottom:20px}.section-header h4{font-size:1.2rem;font-weight:600;color:#333}.section-header svg{width:20px;height:20px}.detail-item{margin-bottom:15px;font-size:14px}.detail-label{color:#666;font-weight:500}.detail-value{margin-left:10px;font-weight:600;color:#333}.password-value{font-weight:700;background:rgba(0,0,0,.05);padding:5px 8px;border-radius:6px;font-size:12px;word-break:break-all}.permit-links-body{padding:30px 40px;overflow-y:auto;max-height:calc(90vh - 120px)}.permit-link-item{background:rgba(255,255,255,.6);border-radius:12px;padding:25px;margin-bottom:15px;transition:all .3s ease;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:space-between}.permit-link-item:hover{background:rgba(255,255,255,.8);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.1)}.permit-link-content{display:flex;align-items:center;gap:20px;flex:1}.permit-link-number{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}.permit-link-info h3{font-size:1.2rem;font-weight:600;color:#333;margin-bottom:8px}.permit-link-url{color:#667eea;text-decoration:none;font-size:14px;word-break:break-all;transition:color .3s ease}.permit-link-url:hover{color:#764ba2;text-decoration:underline}.permit-link-note{color:#666;font-style:italic;font-size:14px}.permit-visit-btn{padding:12px 20px;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;border:none;border-radius:8px;font-weight:600;text-decoration:none;transition:all .3s ease;display:flex;align-items:center;gap:8px}.permit-visit-btn:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 8px 25px rgba(102,126,234,.4);color:#fff;text-decoration:none}body.modal-open{overflow:hidden}.permit-links-body{padding:30px 40px;overflow-y:auto;max-height:calc(100vh - 200px)}.permit-link-item{background:rgba(255,255,255,.6);border-radius:12px;padding:25px;margin-bottom:15px;display:flex;align-items:center;justify-content:space-between;transition:all .3s ease;border:1px solid rgba(255,255,255,.2)}.permit-link-item:hover{background:rgba(255,255,255,.8);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.1)}.permit-link-content{display:flex;align-items:center;gap:20px;flex:1}.permit-link-number{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0}.permit-link-info{flex:1}.permit-link-info h3{font-size:18px;font-weight:600;color:#333;margin-bottom:8px}.permit-link-url{color:#667eea;text-decoration:none;font-size:14px;word-break:break-all;transition:color .3s ease}.permit-link-url:hover{color:#764ba2;text-decoration:underline}.permit-link-note{color:#666;font-style:italic;font-size:14px;margin:0}.permit-visit-btn{background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:500;display:flex;align-items:center;gap:8px;transition:all .3s ease;flex-shrink:0}.permit-visit-btn:hover{background:linear-gradient(135deg,#764ba2 0,#667eea 100%);transform:translateY(-2px);box-shadow:0 8px 25px rgba(102,126,234,.4);color:#fff;text-decoration:none}.golbe-icon{color:#1382c9}@media (max-width:768px){.permit-link-item{flex-direction:column;align-items:flex-start;gap:15px}.permit-visit-btn{align-self:stretch;justify-content:center}}@media (max-width:768px){.logo{height:60px}.service-card{margin-bottom:20px}.general-btn{margin-bottom:15px;min-height:100px}.modal-content{margin:10px;width:calc(100% - 20px)}.modal-header{padding:20px}.modal-search{padding:20px}.permit-links-body{padding:20px}.modal-body{flex-direction:column}.user-details,.user-list{width:100%}.user-list{border-right:none;border-bottom:1px solid rgba(0,0,0,.1);max-height:300px}.permit-link-item{flex-direction:column;align-items:flex-start;gap:15px}.permit-link-content{width:100%}}@media (max-width:576px){.logo{height:50px}.service-card{padding:20px}.general-section{padding:20px}.general-btn{min-height:80px;padding:15px}.permit-link-number{width:40px;height:40px;font-size:16px}}</style><div class="container-fluid py-4"><div class=row><div class="text-center col-12"><div><img alt="Centillion Networks"class="mb-4 logo"src=https://centillionnetworks.com/wp-content/uploads/2024/08/centi-logo-01.svg></div></div></div></div><div class="container-fluid px-4"><div class="row g-4"><div class=col-lg-6><div class="h-100 service-card"><img alt=windsstream class="text-center mb-4 d-block mx-auto bright-speed-logo"src=https://login.windstream.com/assets/images/employee-login/windstream-logo.png><div class="row g-2"><div class=col-6><a href=https://windstream.brainier.com/#/object/3028 target=_blank><button class="w-100 btn service-btn">Trainings</button></a></div><div class=col-6><a href=https://winbroadband.quickbase.com/db/bk2ysagax target=_blank><button class="w-100 btn service-btn">EPM Live</button></a></div><div class=col-6><a href=http://jobtracosp.windstream.com/JobTrac/OSPWorkFlow/index.cfm target=_blank><button class="w-100 btn service-btn">Job Trac OSP</button></a></div><div class=col-6><a href=http://jobtrac.windstream.com/JobTrac/index.cfm target=_blank><button class="w-100 btn service-btn">Job Trac Proper</button></a></div><div class=col-6><a href=https://windstream.cloud.com target=_blank><button class="w-100 btn service-btn">GComms</button></a></div><div class=col-6><a href="https://desktop.pingone.com/windstream/Selection?cmd=selection"target=_blank><button class="w-100 btn service-btn">Ping ID</button></a></div><div class=col-6><button class="w-100 btn service-btn"id=userDetailsBtn>User Details</button></div><div class=col-6><a href=https://jira.windstream.com/projects/CCR/summary target=_blank><button class="w-100 btn service-btn">JIRA</button></a></div><div class=col-6><a href="https://login.windstream.com/ext/pwdchange/Identify?AdapterId=employeeHtmlForm&TargetResource=https%3A%2F"target=_blank><button class="w-100 btn service-btn">User Change Password</button></a></div><div class=col-6><a href=https://3gisapp-windstream.prod.3-gislive.com/3giswebjs/ target=_blank><button class="w-100 btn service-btn">3-GIS Production</button></a></div><div class=col-6><button class="w-100 service-btn"id=permitLinksBtn>Permit Links</button></div><div class=col-6><a href="https://app.regrid.com/us#b=admin"target=_blank><button class="w-100 btn service-btn">Regrid</button></a></div><div class=col-6><a href="https://win.cherwellondemand.com/CherwellPortal/SelfService?Locale=en-US&_=73a81b6c#0"target=_blank><button class="w-100 btn service-btn">WIN Help</button></a></div><div class=col-6><a href=https://login.windstream.com/employee/resetpassword target=_blank><button class="w-100 btn service-btn">account recovery</button></a></div><div class=col-6><a href=https://katapultpro.com/map/# target=_blank><button class="w-100 btn service-btn">Katapult</button></a></div><div class=col-6><a href=https://lidarviewer.ropoli.ai/login target=_blank><button class="w-100 btn service-btn">LiDAR Viewer</button></a></div><div class=col-6><a href=https://homemetry.com/ target=_blank><button class="w-100 btn service-btn">Homemetry</button></a></div><div class=col-6><a href=https://tools.usps.com/zip-code-lookup.htm target=_blank><button class="w-100 btn service-btn">USPS</button></a></div><div class=col-6><a href=https://winbuy.windstream.com/Page/WINbuyHome target=_blank><button class="w-100 btn service-btn">WINBuy</button></a></div><div class=col-6><a href=https://ns-c2c290b4-443-windstream.npaproxy.goskope.com/ target=_blank><button class="w-100 btn service-btn">Windstream App Directory</button></a></div><div class=col-6><a href=https://app.powerbi.com/groups/ target=_blank><button class="w-100 btn service-btn">PowerBI</button></a></div><div class=col-6><a href=https://windstream.sharepoint.com/sites/Kinetic%20Planning/EPM_Docs/Shared%20Documents/Forms/AllItems.aspx target=_blank><button class="w-100 btn service-btn">EPM Documents</button></a></div><div class=col-6><a href=https://windstream.sharepoint.com/sites/WINDSTREAMCENTRALPERMITTEAM/Shared%20Documents target=_blank><button class="w-100 btn service-btn">Windstream permit Repo</button></a></div><div class=col-6><a href=https://wvd.windstream.com target=_blank><button class="w-100 btn service-btn">Windstream AVD</button></a></div><div class=col-6><a href=https://wiki.windstream.com/pages/viewpage.action?spaceKey=BE&title=OSP+-+Outside+Plant+Enginee… target=_blank><button class="w-100 btn service-btn">Windstream Repository</button></a></div></div></div></div><div class=col-lg-6><div class="h-100 service-card"><img alt="Brigth speed"class="text-center mb-4 d-block mx-auto bright-speed-logo"src=https://www.brightspeed.com/content/dam/brightspeed-brspd/images/logos/brightspeed-logo-full-color.svg><div class="row g-2"><div class=col-6><a href=https://platform.brightspeed.iqgeo.cloud/login target=_blank class="w-100 btn service-btn text-center">IQGeo Production</a></div><div class=col-6><a href="https://uat.brightspeed.iqgeo.cloud/login?params=&message=&redirect_to=fps"target=_blank class="w-100 btn service-btn text-center">IQGeo UAT</a></div><div class=col-6><a href=https://ams.brightspeed.com/login target=_blank class="w-100 btn service-btn text-center">AMS</a></div><div class=col-6><a href=https://www.brightspeed.com/ target=_blank class="w-100 btn service-btn text-center">Brightspeed Service Provider</a></div><div class=col-6><a href="https://brightspeed.service-now.com/esc?id=index_1"target=_blank class="w-100 btn service-btn text-center">Brightspeed Service Portal</a></div><div class=col-6><a href=https://www.us.fieldglass.cloud.sap/login.do target=_blank class="w-100 btn service-btn text-center">Field Glass</a></div><div class=col-6><a href=https://fundingmap.fcc.gov/home target=_blank class="w-100 btn service-btn text-center">Broadband Funding Map</a></div><div class=col-6><button class="w-100 btn service-btn"id=brightspeedUserDetailsBtn>User Details</button></div><div class=col-6><a href=https://www.smarty.com/products/single-address target=_blank class="w-100 btn service-btn text-center">Smarty</a></div></div><div class="line mt-5"></div><div class=row><img alt="Brigth speed"class="text-center mb-4 d-block mx-auto mt-3 w-25"src="https://assets.lumen.com/is/content/Lumen/Lumen-logo-R?Creativeid=dd032ee8-6530-4437-8e9d-209b357060ce"><div class="row g-2"><div class=col-6><a href=https://centurylink.sharepoint.com/ target=_blank class="w-100 btn service-btn text-center">Lumen SharePoint</a></div><div class=col-6><a href=https://myavd.lumen.com/ target=_blank class="w-100 btn service-btn text-center">Lumen</a></div><div class=col-6><a href=https://katapultpro.com/map target=_blank class="w-100 btn service-btn text-center">Katapult</a></div><div class=col-6><a href=https://lidartechsolutions.us target=_blank class="w-100 btn service-btn text-center">Lidar</a></div><div class=col-6><a href=https://experience.arcgis.com/experience/ecbd3732523342338b9c511c7f399909 target=_blank class="w-100 btn service-btn text-center">Spokane Valley Viewer</a></div><div class=col-6><a href=https://cp.spokanecounty.org/scout/map/ target=_blank class="w-100 btn service-btn text-center">Spokane County SCOUT</a></div><div class=col-6><a href=https://www.bing.com/maps target=_blank><button class="w-100 btn service-btn">Bing Maps</button></a></div></div></div></div></div></div><div class="row my-5">
+<meta charset=UTF-8>
+<meta content="width=device-width,initial-scale=1" name=viewport>
+<title>Centillion Networks - Dashboard</title>
+<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css rel=stylesheet>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css rel=stylesheet>
+<link href=https://centillionnetworks.com/wp-content/uploads/2023/03/cropped-fav_centNet-192x192.jpg rel=icon
+    sizes=192x192>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #f5f7fa 0, #c3cfe2 100%);
+        min-height: 100vh
+    }
+
+    a {
+        text-decoration: none
+    }
+
+    .logo {
+        height: 55px;
+        width: auto;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .1))
+    }
+
+    .service-card {
+        background: rgba(255, 255, 255, .9);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, .2);
+        transition: all .3s ease
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, .15)
+    }
+
+    .service-title {
+        color: #333;
+        font-weight: 600
+    }
+
+    .service-btn {
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        color: #fff;
+        font-weight: 500;
+        transition: all .3s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        text-align: center
+    }
+
+    .service-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .3), transparent);
+        transition: left .5s
+    }
+
+    .service-btn:hover::before {
+        left: 100%
+    }
+
+    .service-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, .4);
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        border-color: transparent;
+        color: #fff;
+        text-decoration: none
+    }
+
+    .general-section {
+        background: rgba(255, 255, 255, .9);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+        backdrop-filter: blur(10px)
+    }
+
+    .section-title {
+        color: #333;
+        font-weight: 600
+    }
+
+    .general-btn {
+        padding: 20px;
+        border: none;
+        border-radius: 15px;
+        background: linear-gradient(135deg, #9a81da 0, #ee6108 100%);
+        color: #fff;
+        font-weight: 600;
+        transition: all .3s ease;
+        position: relative;
+        overflow: hidden;
+        min-height: 120px;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+
+    .general-btn:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(255, 107, 107, .4);
+        background: linear-gradient(135deg, #ff6b6b 0, #667eea 100%);
+        border-color: transparent;
+        color: #fff;
+        text-decoration: none
+    }
+
+    .general-btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, .2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .6s ease
+    }
+
+    .general-btn:hover::after {
+        width: 300px;
+        height: 300px
+    }
+
+    .project-matrix-icon {
+        font-size: 35px;
+        height: 45px;
+        width: 45px
+    }
+
+    .bright-speed-logo {
+        width: 35%
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: #667eea;
+        margin: 20px 0
+    }
+
+    .globe-icon {
+        color: #1382c9
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity .3s ease;
+        align-items: center;
+        justify-content: center
+    }
+
+    .modal.show {
+        display: flex;
+        opacity: 1
+    }
+
+    .modal-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(10px)
+    }
+
+    .modal-content {
+        position: relative;
+        margin: 20px;
+        background: rgba(255, 255, 255, .95);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, .2);
+        border: 1px solid rgba(255, 255, 255, .2);
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 40px);
+        width: calc(100% - 40px);
+        max-width: 1200px;
+        margin: 20px auto;
+        overflow: hidden;
+        transform: scale(.9);
+        transition: transform .3s ease;
+        z-index: 10000
+    }
+
+    .modal.show .modal-content {
+        transform: scale(1)
+    }
+
+    .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 40px;
+        border-bottom: 1px solid rgba(0, 0, 0, .1)
+    }
+
+    .modal-title {
+        font-size: 2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text
+    }
+
+    .modal-close {
+        background: 0 0;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #666;
+        transition: all .3s ease;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .modal-close:hover {
+        background: rgba(0, 0, 0, .1);
+        color: #333
+    }
+
+    .modal-search {
+        padding: 30px 40px;
+        border-bottom: 1px solid rgba(0, 0, 0, .1)
+    }
+
+    .search-container {
+        position: relative
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 15px 15px 15px 50px;
+        border: 2px solid rgba(102, 126, 234, .2);
+        border-radius: 12px;
+        font-size: 16px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur(10px);
+        transition: all .3s ease
+    }
+
+    .search-input:focus {
+        outline: 0;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, .1)
+    }
+
+    .modal-body {
+        display: flex;
+        flex: 1;
+        overflow: hidden
+    }
+
+    .user-list {
+        width: 50%;
+        border-right: 1px solid rgba(0, 0, 0, .1);
+        overflow-y: auto
+    }
+
+    .user-list-container {
+        padding: 20px
+    }
+
+    .user-item {
+        padding: 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all .3s ease;
+        margin-bottom: 10px;
+        background: rgba(255, 255, 255, .6);
+        border: 1px solid rgba(0, 0, 0, .05)
+    }
+
+    .user-item:hover {
+        background: rgba(102, 126, 234, .1);
+        transform: translateX(5px)
+    }
+
+    .user-item.selected {
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        color: #fff;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, .3)
+    }
+
+    .user-item-header {
+        display: flex;
+        align-items: center;
+        gap: 15px
+    }
+
+    .user-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 18px;
+        color: #fff
+    }
+
+    .user-item:not(.selected) .user-avatar {
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%)
+    }
+
+    .user-item.selected .user-avatar {
+        background: rgba(255, 255, 255, .2)
+    }
+
+    .user-info h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px
+    }
+
+    .user-info p {
+        font-size: 14px;
+        opacity: .8
+    }
+
+    .user-details {
+        width: 50%;
+        overflow-y: auto
+    }
+
+    .user-details-container {
+        padding: 30px
+    }
+
+    .user-details-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #666;
+        text-align: center
+    }
+
+    .user-details-placeholder svg {
+        margin-bottom: 20px;
+        opacity: .5
+    }
+
+    .user-details-content {
+        display: none
+    }
+
+    .user-details-content.show {
+        display: block
+    }
+
+    .user-profile-header {
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        color: #fff;
+        padding: 30px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 20px
+    }
+
+    .user-profile-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 700
+    }
+
+    .user-profile-info h2 {
+        font-size: 2rem;
+        margin-bottom: 5px
+    }
+
+    .user-profile-info p {
+        font-size: 1.2rem;
+        opacity: .9
+    }
+
+    .user-details-section {
+        background: rgba(255, 255, 255, .6);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px
+    }
+
+    .section-header h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333
+    }
+
+    .section-header svg {
+        width: 20px;
+        height: 20px
+    }
+
+    .detail-item {
+        margin-bottom: 15px;
+        font-size: 14px
+    }
+
+    .detail-label {
+        color: #666;
+        font-weight: 500
+    }
+
+    .detail-value {
+        margin-left: 10px;
+        font-weight: 600;
+        color: #333
+    }
+
+    .password-value {
+        font-weight: 700;
+        background: rgba(0, 0, 0, .05);
+        padding: 5px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        word-break: break-all
+    }
+
+    .permit-links-body {
+        padding: 30px 40px;
+        overflow-y: auto;
+        max-height: calc(90vh - 120px)
+    }
+
+    .permit-link-item {
+        background: rgba(255, 255, 255, .6);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 15px;
+        transition: all .3s ease;
+        border: 1px solid rgba(255, 255, 255, .2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+    }
+
+    .permit-link-item:hover {
+        background: rgba(255, 255, 255, .8);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, .1)
+    }
+
+    .permit-link-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1
+    }
+
+    .permit-link-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 18px
+    }
+
+    .permit-link-info h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px
+    }
+
+    .permit-link-url {
+        color: #667eea;
+        text-decoration: none;
+        font-size: 14px;
+        word-break: break-all;
+        transition: color .3s ease
+    }
+
+    .permit-link-url:hover {
+        color: #764ba2;
+        text-decoration: underline
+    }
+
+    .permit-link-note {
+        color: #666;
+        font-style: italic;
+        font-size: 14px
+    }
+
+    .permit-visit-btn {
+        padding: 12px 20px;
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all .3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px
+    }
+
+    .permit-visit-btn:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, .4);
+        color: #fff;
+        text-decoration: none
+    }
+
+    body.modal-open {
+        overflow: hidden
+    }
+
+    .permit-links-body {
+        padding: 30px 40px;
+        overflow-y: auto;
+        max-height: calc(100vh - 200px)
+    }
+
+    .permit-link-item {
+        background: rgba(255, 255, 255, .6);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all .3s ease;
+        border: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    .permit-link-item:hover {
+        background: rgba(255, 255, 255, .8);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, .1)
+    }
+
+    .permit-link-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1
+    }
+
+    .permit-link-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 18px;
+        flex-shrink: 0
+    }
+
+    .permit-link-info {
+        flex: 1
+    }
+
+    .permit-link-info h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px
+    }
+
+    .permit-link-url {
+        color: #667eea;
+        text-decoration: none;
+        font-size: 14px;
+        word-break: break-all;
+        transition: color .3s ease
+    }
+
+    .permit-link-url:hover {
+        color: #764ba2;
+        text-decoration: underline
+    }
+
+    .permit-link-note {
+        color: #666;
+        font-style: italic;
+        font-size: 14px;
+        margin: 0
+    }
+
+    .permit-visit-btn {
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all .3s ease;
+        flex-shrink: 0
+    }
+
+    .permit-visit-btn:hover {
+        background: linear-gradient(135deg, #764ba2 0, #667eea 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, .4);
+        color: #fff;
+        text-decoration: none
+    }
+
+    .golbe-icon {
+        color: #1382c9
+    }
+
+    @media (max-width:768px) {
+        .permit-link-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px
+        }
+
+        .permit-visit-btn {
+            align-self: stretch;
+            justify-content: center
+        }
+    }
+
+    @media (max-width:768px) {
+        .logo {
+            height: 60px
+        }
+
+        .service-card {
+            margin-bottom: 20px
+        }
+
+        .general-btn {
+            margin-bottom: 15px;
+            min-height: 100px
+        }
+
+        .modal-content {
+            margin: 10px;
+            width: calc(100% - 20px)
+        }
+
+        .modal-header {
+            padding: 20px
+        }
+
+        .modal-search {
+            padding: 20px
+        }
+
+        .permit-links-body {
+            padding: 20px
+        }
+
+        .modal-body {
+            flex-direction: column
+        }
+
+        .user-details,
+        .user-list {
+            width: 100%
+        }
+
+        .user-list {
+            border-right: none;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+            max-height: 300px
+        }
+
+        .permit-link-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px
+        }
+
+        .permit-link-content {
+            width: 100%
+        }
+    }
+
+    @media (max-width:576px) {
+        .logo {
+            height: 50px
+        }
+
+        .service-card {
+            padding: 20px
+        }
+
+        .general-section {
+            padding: 20px
+        }
+
+        .general-btn {
+            min-height: 80px;
+            padding: 15px
+        }
+
+        .permit-link-number {
+            width: 40px;
+            height: 40px;
+            font-size: 16px
+        }
+    }
+</style>
+<div class="container-fluid py-4">
+    <div class=row>
+        <div class="text-center col-12">
+            <div><img alt="Centillion Networks" class="mb-4 logo"
+                    src=https://centillionnetworks.com/wp-content/uploads/2024/08/centi-logo-01.svg></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-4">
+    <div class="row g-4">
+        <div class=col-lg-6>
+            <div class="h-100 service-card"><img alt=windsstream
+                    class="text-center mb-4 d-block mx-auto bright-speed-logo"
+                    src=https://login.windstream.com/assets/images/employee-login/windstream-logo.png>
+                <div class="row g-2">
+                    <div class=col-6><a href=https://windstream.brainier.com/#/object/3028 target=_blank><button
+                                class="w-100 btn service-btn">Trainings</button></a></div>
+                    <div class=col-6><a href=https://winbroadband.quickbase.com/db/bk2ysagax target=_blank><button
+                                class="w-100 btn service-btn">EPM Live</button></a></div>
+                    <div class=col-6><a href=http://jobtracosp.windstream.com/JobTrac/OSPWorkFlow/index.cfm
+                            target=_blank><button class="w-100 btn service-btn">Job Trac OSP</button></a></div>
+                    <div class=col-6><a href=http://jobtrac.windstream.com/JobTrac/index.cfm target=_blank><button
+                                class="w-100 btn service-btn">Job Trac Proper</button></a></div>
+                    <div class=col-6><a href=https://windstream.cloud.com target=_blank><button
+                                class="w-100 btn service-btn">GComms</button></a></div>
+                    <div class=col-6><a href="https://desktop.pingone.com/windstream/Selection?cmd=selection"
+                            target=_blank><button class="w-100 btn service-btn">Ping ID</button></a></div>
+                    <div class=col-6><button class="w-100 btn service-btn" id=userDetailsBtn>User Details</button></div>
+                    <div class=col-6><a href=https://jira.windstream.com/projects/CCR/summary target=_blank><button
+                                class="w-100 btn service-btn">JIRA</button></a></div>
+                    <div class=col-6><a
+                            href="https://login.windstream.com/ext/pwdchange/Identify?AdapterId=employeeHtmlForm&TargetResource=https%3A%2F"
+                            target=_blank><button class="w-100 btn service-btn">User Change Password</button></a></div>
+                    <div class=col-6><a href=https://3gisapp-windstream.prod.3-gislive.com/3giswebjs/
+                            target=_blank><button class="w-100 btn service-btn">3-GIS Production</button></a></div>
+                    <div class=col-6><button class="w-100 service-btn" id=permitLinksBtn>Permit Links</button></div>
+                    <div class=col-6><a href="https://app.regrid.com/us#b=admin" target=_blank><button
+                                class="w-100 btn service-btn">Regrid</button></a></div>
+                    <div class=col-6><a
+                            href="https://win.cherwellondemand.com/CherwellPortal/SelfService?Locale=en-US&_=73a81b6c#0"
+                            target=_blank><button class="w-100 btn service-btn">WIN Help</button></a></div>
+                    <div class=col-6><a href=https://login.windstream.com/employee/resetpassword target=_blank><button
+                                class="w-100 btn service-btn">account recovery</button></a></div>
+                    <div class=col-6><a href=https://katapultpro.com/map/# target=_blank><button
+                                class="w-100 btn service-btn">Katapult</button></a></div>
+                    <div class=col-6><a href=https://lidarviewer.ropoli.ai/login target=_blank><button
+                                class="w-100 btn service-btn">LiDAR Viewer</button></a></div>
+                    <div class=col-6><a href=https://homemetry.com/ target=_blank><button
+                                class="w-100 btn service-btn">Homemetry</button></a></div>
+                    <div class=col-6><a href=https://tools.usps.com/zip-code-lookup.htm target=_blank><button
+                                class="w-100 btn service-btn">USPS</button></a></div>
+                    <div class=col-6><a href=https://winbuy.windstream.com/Page/WINbuyHome target=_blank><button
+                                class="w-100 btn service-btn">WINBuy</button></a></div>
+                    <div class=col-6><a href=https://ns-c2c290b4-443-windstream.npaproxy.goskope.com/
+                            target=_blank><button class="w-100 btn service-btn">Windstream App Directory</button></a>
+                    </div>
+                    <div class=col-6><a href=https://app.powerbi.com/groups/ target=_blank><button
+                                class="w-100 btn service-btn">PowerBI</button></a></div>
+                    <div class=col-6><a
+                            href=https://windstream.sharepoint.com/sites/Kinetic%20Planning/EPM_Docs/Shared%20Documents/Forms/AllItems.aspx
+                            target=_blank><button class="w-100 btn service-btn">EPM Documents</button></a></div>
+                    <div class=col-6><a
+                            href=https://windstream.sharepoint.com/sites/WINDSTREAMCENTRALPERMITTEAM/Shared%20Documents
+                            target=_blank><button class="w-100 btn service-btn">Windstream permit Repo</button></a>
+                    </div>
+                    <div class=col-6><a href=https://wvd.windstream.com target=_blank><button
+                                class="w-100 btn service-btn">Windstream AVD</button></a></div>
+                    <div class=col-6><a
+                            href=https://wiki.windstream.com/pages/viewpage.action?spaceKey=BE&title=OSP+-+Outside+Plant+Enginee…
+                            target=_blank><button class="w-100 btn service-btn">Windstream Repository</button></a></div>
+                </div>
+            </div>
+        </div>
+        <div class=col-lg-6>
+            <div class="h-100 service-card"><img alt="Brigth speed"
+                    class="text-center mb-4 d-block mx-auto bright-speed-logo"
+                    src=https://www.brightspeed.com/content/dam/brightspeed-brspd/images/logos/brightspeed-logo-full-color.svg>
+                <div class="row g-2">
+                    <div class=col-6><a href=https://platform.brightspeed.iqgeo.cloud/login target=_blank
+                            class="w-100 btn service-btn text-center">IQGeo Production</a></div>
+                    <div class=col-6><a
+                            href="https://uat.brightspeed.iqgeo.cloud/login?params=&message=&redirect_to=fps"
+                            target=_blank class="w-100 btn service-btn text-center">IQGeo UAT</a></div>
+                    <div class=col-6><a href=https://ams.brightspeed.com/login target=_blank
+                            class="w-100 btn service-btn text-center">AMS</a></div>
+                    <div class=col-6><a href=https://www.brightspeed.com/ target=_blank
+                            class="w-100 btn service-btn text-center">Brightspeed Service Provider</a></div>
+                    <div class=col-6><a href="https://brightspeed.service-now.com/esc?id=index_1" target=_blank
+                            class="w-100 btn service-btn text-center">Brightspeed Service Portal</a></div>
+                    <div class=col-6><a href=https://www.us.fieldglass.cloud.sap/login.do target=_blank
+                            class="w-100 btn service-btn text-center">Field Glass</a></div>
+                    <div class=col-6><a href=https://fundingmap.fcc.gov/home target=_blank
+                            class="w-100 btn service-btn text-center">Broadband Funding Map</a></div>
+                    <div class=col-6><button class="w-100 btn service-btn" id=brightspeedUserDetailsBtn>User
+                            Details</button></div>
+                    <div class=col-6><a href=https://www.smarty.com/products/single-address target=_blank
+                            class="w-100 btn service-btn text-center">Smarty</a></div>
+                </div>
+                <div class="line mt-5"></div>
+                <div class=row><img alt="Brigth speed" class="text-center mb-4 d-block mx-auto mt-3 w-25"
+                        src="https://assets.lumen.com/is/content/Lumen/Lumen-logo-R?Creativeid=dd032ee8-6530-4437-8e9d-209b357060ce">
+                    <div class="row g-2">
+                        <div class=col-6><a href=https://centurylink.sharepoint.com/ target=_blank
+                                class="w-100 btn service-btn text-center">Lumen SharePoint</a></div>
+                        <div class=col-6><a href=https://myavd.lumen.com/ target=_blank
+                                class="w-100 btn service-btn text-center">Lumen</a></div>
+                        <div class=col-6><a href=https://katapultpro.com/map target=_blank
+                                class="w-100 btn service-btn text-center">Katapult</a></div>
+                        <div class=col-6><a href=https://lidartechsolutions.us target=_blank
+                                class="w-100 btn service-btn text-center">Lidar</a></div>
+                        <div class=col-6><a
+                                href=https://experience.arcgis.com/experience/ecbd3732523342338b9c511c7f399909
+                                target=_blank class="w-100 btn service-btn text-center">Spokane Valley Viewer</a></div>
+                        <div class=col-6><a href=https://cp.spokanecounty.org/scout/map/ target=_blank
+                                class="w-100 btn service-btn text-center">Spokane County SCOUT</a></div>
+                        <div class=col-6><a href=https://www.bing.com/maps target=_blank><button
+                                    class="w-100 btn service-btn">Bing Maps</button></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-5">
         <div class=col-12>
             <div class="general-section p-4">
                 <h3 class="text-center mb-4 section-title"><i class="fa-globe fas golbe-icon"></i> Workplace Suite</h3>
@@ -30,829 +926,916 @@
                                     alt="project matrix" class="text-center project-matrix-icon"
                                     src=https://statics.teams.cdn.live.net/evergreen-assets/gather/images/teams-logo.svg><span>Teams</span></button></a>
                     </div>
-                    <div class="col-md-2 col-sm-6"><a href=https://teams.microsoft.com target=_blank
-                        class=text-decoration-none><button
-                            class="w-100 btn align-items-center d-flex flex-column general-btn"><img
-                                alt="project matrix" class="text-center project-matrix-icon"
-                                src=https://tracker.centillionnetworks.in/><span>Ticketing Tracker</span></button></a>
-                </div>
-                <div class="col-md-2 col-sm-6"><a href=https://teams.microsoft.com target=_blank
-                    class=text-decoration-none><button
-                        class="w-100 btn align-items-center d-flex flex-column general-btn"><img
-                            alt="project matrix" class="text-center project-matrix-icon"
-                            src=https://resolver.centillionnetworks.in/><span>Centillion Support</span></button></a>
+                    <div class="col-md-2 col-sm-6">
+                        <a href="https://tracker.centillionnetworks.in/" target="_blank" class="text-decoration-none">
+                          <button class="w-100 btn align-items-center d-flex flex-column general-btn">
+                            <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-ticket h-6 w-6 text-primary-foreground"
+                              >
+                                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                                <path d="M13 5v2"></path>
+                                <path d="M13 17v2"></path>
+                                <path d="M13 11v2"></path>
+                              </svg>
+                            </div>
+                            <span>Ticketing Tracker</span>
+                          </button>
+                        </a>
+                      </div>
+                      
+                      <div class="col-md-2 col-sm-6">
+                        <a href="https://resolver.centillionnetworks.in/login" target="_blank" class="text-decoration-none">
+                          <button class="w-100 btn align-items-center d-flex flex-column general-btn">
+                            <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-headphones h-6 w-6 text-primary-foreground"
+                              >
+                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                              </svg>
+                            </div>
+                            <span>Centillion Support</span>
+                          </button>
+                        </a>
+                      </div>
+                      
             </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class=modal id=userModal>
+    <div class=modal-backdrop></div>
+    <div class=modal-content>
+        <div class=modal-header>
+            <h2 class=modal-title id=modalTitle>User Directory</h2><button class=modal-close id=closeModal
+                type=button><svg fill=none height=24 stroke=currentColor viewBox="0 0 24 24" width=24>
+                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap=round stroke-linejoin=round stroke-width=2 />
+                </svg></button>
+        </div>
+        <div class=modal-search>
+            <div class=search-container><svg fill=none height=20 stroke=currentColor viewBox="0 0 24 24" width=20
+                    class=search-icon>
+                    <circle cx=11 cy=11 r=8 />
+                    <path d="m21 21-4.35-4.35" />
+                </svg> <input class=search-input id=searchInput placeholder="Search by name or username..."></div>
+        </div>
+        <div class=modal-body>
+            <div class=user-list>
+                <div class=user-list-container id=userListContainer></div>
+            </div>
+            <div class=user-details>
+                <div class=user-details-container id=userDetailsContainer>
+                    <div class=user-details-placeholder><svg fill=none height=64 stroke=currentColor viewBox="0 0 24 24"
+                            width=64>
+                            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                stroke-linecap=round stroke-linejoin=round stroke-width=2 />
+                        </svg>
+                        <p>Select a user to view details
+                    </div>
                 </div>
             </div>
         </div>
-    </div></div><div class=modal id=userModal><div class=modal-backdrop></div><div class=modal-content><div class=modal-header><h2 class=modal-title id=modalTitle>User Directory</h2><button class=modal-close id=closeModal type=button><svg fill=none height=24 stroke=currentColor viewBox="0 0 24 24"width=24><path d="M6 18L18 6M6 6l12 12"stroke-linecap=round stroke-linejoin=round stroke-width=2 /></svg></button></div><div class=modal-search><div class=search-container><svg fill=none height=20 stroke=currentColor viewBox="0 0 24 24"width=20 class=search-icon><circle cx=11 cy=11 r=8 /><path d="m21 21-4.35-4.35"/></svg> <input class=search-input id=searchInput placeholder="Search by name or username..."></div></div><div class=modal-body><div class=user-list><div class=user-list-container id=userListContainer></div></div><div class=user-details><div class=user-details-container id=userDetailsContainer><div class=user-details-placeholder><svg fill=none height=64 stroke=currentColor viewBox="0 0 24 24"width=64><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"stroke-linecap=round stroke-linejoin=round stroke-width=2 /></svg><p>Select a user to view details</div></div></div></div></div></div><div class=modal id=permitLinksModal><div class=modal-backdrop></div><div class=modal-content><div class=modal-header><h2 class=modal-title>Permit Links Directory</h2><button class=modal-close id=closePermitModal type=button><svg fill=none height=24 stroke=currentColor viewBox="0 0 24 24"width=24><path d="M6 18L18 6M6 6l12 12"stroke-linecap=round stroke-linejoin=round stroke-width=2 /></svg></button></div><div class=permit-links-body id=permitLinksBody></div></div></div>
-    <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js></script>
-    <!-- Custom Modal Script -->
-    <script>
-        // Windstream user data
-        const windstreamUserData = [
-            {
-                name: "Shyamala Vasala",
-                windstreamEmail: "Akkena.Sukanya@windstream.com",
-                n99Id: "N9888201",
-                password: "Centillion@2037",
-                threegispassword: "No access",
-                gcommsPassword: "w6A4A2gnbzA4TB#"
-            },
-            {
-                name: "Srikanth Narala",
-                windstreamEmail: "srikanth.narala@windstream.com",
-                n99Id: "N9888271",
-                password: "Centillion@2035",
-                threegispassword: "No access",
-                gcommsPassword: "Wr3s1aSMPPQs2J#"
-            },
-            {
-                name: "Naresh Tamada",
-                windstreamEmail: "rajkumar.simhasanam@windstream.com",
-                n99Id: "N9888216",
-                password: "Centillion@2035",
-                threegispassword: "No access",
-                gcommsPassword: "JASRpXvh654Ejk#"
-            },
-            {
-                name: "Hussain Baji Shaik",
-                windstreamEmail: "lakshmi.gopisetti@windstream.com",
-                n99Id: "N9888212",
-                password: "Centillion@2036",
-                threegispassword: "No access",
-                gcommsPassword: "LmGL1Cx88fKJu37#"
-            },
-            {
-                name: "Bala Malleswara Rao",
-                windstreamEmail: "Singarapu.Kumar@windstream.com",
-                n99Id: "N9888200",
-                password: "Centillion@2037",
-                threegispassword: "No access",
-                gcommsPassword: "gW3BEgDSkX88Vm#"
-            },
-            {
-                name: "Birudhu Santhosh",
-                windstreamEmail: "madhavi.papanati@windstream.com",
-                n99Id: "N9888280",
-                password: "Centillion@2037",
-                threegispassword: "No access",
-                gcommsPassword: "ElGc753qOMxT5U#"
-            },
-            {
-                name: "Sukanya Akkena",
-                windstreamEmail: "sai.elijala@windstream.com",
-                n99Id: "N9888268",
-                password: "Centillion@2035",
-                threegispassword: "No access",
-                gcommsPassword: "L2x4HIsezI1P9iU#"
-            },
-            {
-                name: "Rukmini Singamsetti",
-                windstreamEmail: "anil.kaddula@windstream.com",
-                n99Id: "N9888272",
-                password: "Centillion@2037",
-                threegispassword: "No access",
-                gcommsPassword: "PvmrFYv4Z4ApJa#"
-            },
-            {
-                name: "Sreekanth Regu",
-                windstreamEmail: "srikanth.regu@windstream.com",
-                n99Id: "N9888274",
-                password: "Centillion@2035",
-                threegispassword: "No access",
-                gcommsPassword: "UM3pk9B7uTyL1B#"
-            },
-            {
-                name: "Ravidara tiruvidula",
-                windstreamEmail: "Chennu.Ravindranath@windstream.com",
-                n99Id: "N9888207",
-                password: "Centillion@2034",
-                threegispassword: "Yes",
-                gcommsPassword: "Wje26ajgts5Ynz#"
-            },
-            {
-                name: "Vivek Rampally",
-                windstreamEmail: "Gopala.Krishna@windstream.com",
-                n99Id: "N9888206",
-                password: "Centillion@2035",
-                threegispassword: "No access",
-                gcommsPassword: "Ya6316DwwOVaezN#"
-            },
-            {
-                name: "Prabhas Pradhana",
-                windstreamEmail: "irshad.shaik@windstream.com",
-                n99Id: "N9888260",
-                password: "Centillion@2035",
-                threegispassword: "Yes",
-                gcommsPassword: "E98vfJ1N9yWsnT#"
-            },
-            {
-                name: "Appalanaidu Palli",
-                windstreamEmail: "Kondala.Bandi@windstream.com",
-                n99Id: "N9888211",
-                password: "Centillion@2036",
-                threegispassword: "Yes",
-                gcommsPassword: "ZoBfb01EVGERZM#"
-            },
-            {
-                name: "Srija Dadi",
-                windstreamEmail: "aswartha.nallachennugari@windstream.com",
-                n99Id: "N9888281",
-                password: "Centillion@2037",
-                threegispassword: "No access",
-                gcommsPassword: "Wu08cUVX0JnD4b#"
-            },
-            {
-        name: "Akanksha Asampalli",
-        windstreamEmail: "Akanksha.Asampalli@windstream.com",
-        n99Id: "N9872924",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Vamshi Donthi",
-        windstreamEmail: "Vamshi.Donthi@windstream.com",
-        n99Id: "N9872925",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Tamada Naresh",
-        windstreamEmail: "Tamada.Naresh@windstream.com",
-        n99Id: "N9872926",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Nallapu Vinay",
-        windstreamEmail: "Nallapu.Vinay@windstream.com",
-        n99Id: "N9872927",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Rukmini Singamsetti",
-        windstreamEmail: "Rukmini.Singamsetti@windstream.com",
-        n99Id: "N9872928",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Rajlaxmi Baral",
-        windstreamEmail: "Rajlaxmi.X.Baral@windstream.com",
-        n99Id: "N9872929",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Mary Beereddy",
-        windstreamEmail: "Mary.Beereddy@windstream.com",
-        n99Id: "N9872930",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Bala Swamy",
-        windstreamEmail: "Bala.Swamy@windstream.com",
-        n99Id: "N9872931",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Pavani Marpini",
-        windstreamEmail: "Pavani.Marpini@windstream.com",
-        n99Id: "N9872932",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    },
-    {
-        name: "Sheha Rangu",
-        windstreamEmail: "Sheha.Rangu@windstream.com",
-        n99Id: "N9872933",
-        password: "Centillion@2025",
-        threegispassword: "No access",
-        gcommsPassword: "No access"
-    }
-        ];
+    </div>
+</div>
+<div class=modal id=permitLinksModal>
+    <div class=modal-backdrop></div>
+    <div class=modal-content>
+        <div class=modal-header>
+            <h2 class=modal-title>Permit Links Directory</h2><button class=modal-close id=closePermitModal
+                type=button><svg fill=none height=24 stroke=currentColor viewBox="0 0 24 24" width=24>
+                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap=round stroke-linejoin=round stroke-width=2 />
+                </svg></button>
+        </div>
+        <div class=permit-links-body id=permitLinksBody></div>
+    </div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js></script>
+<!-- Custom Modal Script -->
+<script>
+    // Windstream user data
+    const windstreamUserData = [
+        {
+            name: "Shyamala Vasala",
+            windstreamEmail: "Akkena.Sukanya@windstream.com",
+            n99Id: "N9888201",
+            password: "Centillion@2037",
+            threegispassword: "No access",
+            gcommsPassword: "w6A4A2gnbzA4TB#"
+        },
+        {
+            name: "Srikanth Narala",
+            windstreamEmail: "srikanth.narala@windstream.com",
+            n99Id: "N9888271",
+            password: "Centillion@2035",
+            threegispassword: "No access",
+            gcommsPassword: "Wr3s1aSMPPQs2J#"
+        },
+        {
+            name: "Naresh Tamada",
+            windstreamEmail: "rajkumar.simhasanam@windstream.com",
+            n99Id: "N9888216",
+            password: "Centillion@2035",
+            threegispassword: "No access",
+            gcommsPassword: "JASRpXvh654Ejk#"
+        },
+        {
+            name: "Hussain Baji Shaik",
+            windstreamEmail: "lakshmi.gopisetti@windstream.com",
+            n99Id: "N9888212",
+            password: "Centillion@2036",
+            threegispassword: "No access",
+            gcommsPassword: "LmGL1Cx88fKJu37#"
+        },
+        {
+            name: "Bala Malleswara Rao",
+            windstreamEmail: "Singarapu.Kumar@windstream.com",
+            n99Id: "N9888200",
+            password: "Centillion@2037",
+            threegispassword: "No access",
+            gcommsPassword: "gW3BEgDSkX88Vm#"
+        },
+        {
+            name: "Birudhu Santhosh",
+            windstreamEmail: "madhavi.papanati@windstream.com",
+            n99Id: "N9888280",
+            password: "Centillion@2037",
+            threegispassword: "No access",
+            gcommsPassword: "ElGc753qOMxT5U#"
+        },
+        {
+            name: "Sukanya Akkena",
+            windstreamEmail: "sai.elijala@windstream.com",
+            n99Id: "N9888268",
+            password: "Centillion@2035",
+            threegispassword: "No access",
+            gcommsPassword: "L2x4HIsezI1P9iU#"
+        },
+        {
+            name: "Rukmini Singamsetti",
+            windstreamEmail: "anil.kaddula@windstream.com",
+            n99Id: "N9888272",
+            password: "Centillion@2037",
+            threegispassword: "No access",
+            gcommsPassword: "PvmrFYv4Z4ApJa#"
+        },
+        {
+            name: "Sreekanth Regu",
+            windstreamEmail: "srikanth.regu@windstream.com",
+            n99Id: "N9888274",
+            password: "Centillion@2035",
+            threegispassword: "No access",
+            gcommsPassword: "UM3pk9B7uTyL1B#"
+        },
+        {
+            name: "Ravidara tiruvidula",
+            windstreamEmail: "Chennu.Ravindranath@windstream.com",
+            n99Id: "N9888207",
+            password: "Centillion@2034",
+            threegispassword: "Yes",
+            gcommsPassword: "Wje26ajgts5Ynz#"
+        },
+        {
+            name: "Vivek Rampally",
+            windstreamEmail: "Gopala.Krishna@windstream.com",
+            n99Id: "N9888206",
+            password: "Centillion@2035",
+            threegispassword: "No access",
+            gcommsPassword: "Ya6316DwwOVaezN#"
+        },
+        {
+            name: "Prabhas Pradhana",
+            windstreamEmail: "irshad.shaik@windstream.com",
+            n99Id: "N9888260",
+            password: "Centillion@2035",
+            threegispassword: "Yes",
+            gcommsPassword: "E98vfJ1N9yWsnT#"
+        },
+        {
+            name: "Appalanaidu Palli",
+            windstreamEmail: "Kondala.Bandi@windstream.com",
+            n99Id: "N9888211",
+            password: "Centillion@2036",
+            threegispassword: "Yes",
+            gcommsPassword: "ZoBfb01EVGERZM#"
+        },
+        {
+            name: "Srija Dadi",
+            windstreamEmail: "aswartha.nallachennugari@windstream.com",
+            n99Id: "N9888281",
+            password: "Centillion@2037",
+            threegispassword: "No access",
+            gcommsPassword: "Wu08cUVX0JnD4b#"
+        },
+        {
+            name: "Akanksha Asampalli",
+            windstreamEmail: "Akanksha.Asampalli@windstream.com",
+            n99Id: "N9872924",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Vamshi Donthi",
+            windstreamEmail: "Vamshi.Donthi@windstream.com",
+            n99Id: "N9872925",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Tamada Naresh",
+            windstreamEmail: "Tamada.Naresh@windstream.com",
+            n99Id: "N9872926",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Nallapu Vinay",
+            windstreamEmail: "Nallapu.Vinay@windstream.com",
+            n99Id: "N9872927",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Rukmini Singamsetti",
+            windstreamEmail: "Rukmini.Singamsetti@windstream.com",
+            n99Id: "N9872928",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Rajlaxmi Baral",
+            windstreamEmail: "Rajlaxmi.X.Baral@windstream.com",
+            n99Id: "N9872929",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Mary Beereddy",
+            windstreamEmail: "Mary.Beereddy@windstream.com",
+            n99Id: "N9872930",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Bala Swamy",
+            windstreamEmail: "Bala.Swamy@windstream.com",
+            n99Id: "N9872931",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Pavani Marpini",
+            windstreamEmail: "Pavani.Marpini@windstream.com",
+            n99Id: "N9872932",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        },
+        {
+            name: "Sheha Rangu",
+            windstreamEmail: "Sheha.Rangu@windstream.com",
+            n99Id: "N9872933",
+            password: "Centillion@2025",
+            threegispassword: "No access",
+            gcommsPassword: "No access"
+        }
+    ];
 
-        // Brightspeed user data
-        const brightspeedUserData = [
-            {
-                name: "R G Prasad",
-                username: "govinda.reddi",
-                password: "9*1&mDV5BvSm",
-                userId: "CHB5WK00000965",
-                filedGlasspass: "Dhanu@2017"
-            },
-            {
-                name: "Bhushan G",
-                username: "bhushan.gangireddy",
-                password: "7K&8Cb30XGb#",
-                userId: "CHB5WK00000964",
-                filedGlasspass: "Gangi1479@7"
-            },
-            {
-                name: "Rakesh K",
-                username: "rakeshkumar.sangaru",
-                password: "M&$4q81T",
-                userId: "CHB5WK00001221",
-                filedGlasspass: "Rocky@04"
-            },
-            {
-                name: "Laxman",
-                username: "lakshmana.gadi",
-                password: "1M&ZQ3k1",
-                userId: "CHB5WK00001220",
-                filedGlasspass: "Lucky@86"
-            },
-            {
-                name: "Ravi Gurla",
-                username: "ravi.gurla",
-                password: "8a2%5D43",
-                userId: "CHB5WK00001410",
-                filedGlasspass: "Amma@1410"
-            },
-            {
-                name: "Ravi Kalyanam",
-                username: "ravi.kalyanam",
-                password: "jz&K138F",
-                userId: "CHB5WK00001409",
-                filedGlasspass: "Kravi$2245"
-            },
-            {
-                name: "Divya jyothi V",
-                username: "divyajyothi.varipilli",
-                password: "l92)3Sk!",
-                userId: "CHB5WK00003149",
-                filedGlasspass: "Divya07272"
-            },
-            {
-                name: "Vamshi Vattela",
-                username: "vamshi.vattela",
-                password: "e21e2G\"7",
-                userId: "CHB5WK00003148",
-                filedGlasspass: "Cent#1002@1"
-            },
-            {
-                name: "Trinadh Pallela",
-                username: "trinadh.pallela",
-                password: "aR<8344%",
-                userId: "CHB5WK00003150",
-                filedGlasspass: "sUDHA@03"
-            },
-            {
-                name: "Santosh kumar K",
-                username: "santhosh.kenguva",
-                password: "1U5c#T/6",
-                userId: "CHB5WK00003147",
-                filedGlasspass: "Dravid@16"
-            },
-            {
-                name: "Uma Killi",
-                username: "uma.killi",
-                password: "AeN6Xx&3",
-                userId: "CHB5WK00004314",
-                filedGlasspass: "Hensika@122"
-            },
-            {
-                name: "Nagaraju Sutari",
-                username: "nagaraju.sutari",
-                password: "QiP9Yi,6",
-                userId: "CHB5WK00004313",
-                filedGlasspass: "Naga@8244"
-            },
-            {
-                name: "Nikhil Maddila",
-                username: "nikhil.maddila",
-                password: "UiG3Yt#3",
-                userId: "CHB5WK00004312",
-                filedGlasspass: "Nikky19561"
-            },
-            {
-                name: "Kusuma Gompa",
-                username: "kusuma.gompa",
-                password: "KlW8Vh'2",
-                userId: "CHB5WK00004315",
-                filedGlasspass: "Chinnari@266"
-            },
-            {
-                name: "Satyavathi V",
-                username: "satyavathi.valireddi",
-                password: "KrI4Fk*5",
-                userId: "CHB5WK00004316",
-                filedGlasspass: "Sanvi@122"
-            },
-            {
-                name: "Srikanth",
-                username: "No access",
-                password: "No access",
-                userId: "CHB5WK00009411",
-                filedGlasspass: "Cnsw-2168"
-            },
-            {
-                name: "Murali",
-                username: "No access",
-                password: "No access",
-                userId: "CHB5WK00009410",
-                filedGlasspass: "Cnsw-2166"
-            },
-            {
-                name: "Gous",
-                username: "No access",
-                password: "No access",
-                userId: "CHB5WK00009412",
-                filedGlasspass: "Cnsw-2175"
-            },
-            {
-                name: "Maheswari",
-                username: "No access",
-                password: "No access",
-                userId: "CHB5WK00009409",
-                filedGlasspass: "Cnsw-1677"
-            },
-            {
-                name: "Nandini",
-                username: "No access",
-                password: "No access",
-                userId: "CHB5WK00009598",
-                filedGlasspass: "Cnsw-1676"
-            },
-            {
-    name: "Apoorva Rao",
-    username: "chodavarapu.apoorvarao",
-    password: "Su3Wo!9EhQkU",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "chodavarapuapoorva.r@brightspeed.com",
-    emailPassword: "+3i1~B1~5Jx!"
-},
-{
-    name: "Nagamani Kola",
-    username: "kola.nagamani",
-    password: "Bw5Of&6VgAmI",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "kola.nagamani@brightspeed.com",
-    emailPassword: "2+!KU2z14!+h"
-},
-{
-    name: "Rajesh Thamada",
-    username: "rajesh.thamada",
-    password: "Gd0Pv!1XfEyT",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "rajesh.thamada@brightspeed.com",
-    emailPassword: "P342!~c!eE4!"
-},
-{
-    name: "Lavakusa",
-    username: "surla.lavakusa",
-    password: "Zg7Xk-2HhCvD",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "surla.lavakusa@brightspeed.com",
-    emailPassword: "k+2113cU~I~!"
-},
-{
-    name: "Durga Sai Teja Nagesetti",
-    username: "durgasai.tejanagesetti",
-    password: "Fm0Zy%9GjFeA",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "durgasaiteja.nageset@brightspeed.com",
-    emailPassword: "L4J!2g~b!1?3"
-},
-{
-    name: "Premkumar S",
-    username: "premkumar.saragadam",
-    password: "Bp0Ww,3EnPzR",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "premkumar.saragadam@brightspeed.com",
-    emailPassword: "4C!k24+Ce1!!"
-},
-{
-    name: "Yasaswani B",
-    username: "yasaswani.basanaboyina",
-    password: "Nf1Ps$9HxOcI",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "yasaswani.basanaboyi@brightspeed.com",
-    emailPassword: "F7d5!8?g!+C2"
-},
-{
-    name: "Suryanarayana K",
-    username: "suryanarayana.kotipa",
-    password: "Xb7Ir(8HpMwH",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "suryanarayana.kotipa@brightspeed.com",
-    emailPassword: "!q!Ek4J24!8+"
-},
-{
-    name: "Mahalaxmi Adinarayana",
-    username: "adinarayana.mahalaxmi",
-    password: "Fj7Rl&3WvRcI",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "adinarayana.mahalaxm@brightspeed.com",
-    emailPassword: "3J1Ih?~6!C2B"
-},
-{
-    name: "Gummadla Venkatesh",
-    username: "gummadla.venkatesh",
-    password: "Ri7Df%3LbLsY",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "gummadla.venkatesh@brightspeed.com",
-    emailPassword: "+724fj+ET5?!"
-},
-{
-    name: "Kesava Kumar Bhatta",
-    username: "kesavakumar.bhatta",
-    password: "Yh9Dk\"4HuCaI",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "kesavakumar.bhatta@brightspeed.com",
-    emailPassword: "3+G5!!+B5cj2"
-},
-{
-    name: "Mary Manuja Beereddy",
-    username: "marymanuja.beereddy",
-    password: "Mz7Cy,3NhFfF",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "marymanuja.beereddy@brightspeed.com",
-    emailPassword: "!jB33~!+O7j1"
-},
-{
-    name: "Vasu Medaboina",
-    username: "medaboina.vasu",
-    password: "Bd6Ob.2GeOvO",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "medaboina.vasu@brightspeed.com",
-    emailPassword: "!1S!?~1Bdl54"
-},
-{
-    name: "Vinay Nallapu",
-    username: "nallapu.vinay",
-    password: "Pn9Pm*7EeGpY",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "nallapu.vinay@brightspeed.com",
-    emailPassword: "1!4+e!C11k!C"
-},
-{
-    name: "Prabhas Pradhana",
-    username: "prabhas.pradhana",
-    password: "Ay4Zj'3NaKjN",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "prabhas.pradhana@brightspeed.com",
-    emailPassword: "?2!3E!1d!3Gf"
-},
-{
-    name: "Rajlaxmi Baral",
-    username: "rajlaxmi.baral",
-    password: "Gw9Up%3FnTdU",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "rajlaxmi.baral@brightspeed.com",
-    emailPassword: "2v?5!I!1bB!7"
-},
-{
-    name: "Rukmini Singamsetti",
-    username: "rukmini.singamsetti",
-    password: "Ek8Ih&9YiHrY",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "rukmini.singamsetti@brightspeed.com",
-    emailPassword: "Kk1K!+?1h1!6"
-},
-{
-    name: "Divakar Kagitha",
-    username: "saidivakar.kagitha",
-    password: "Yq3Zy'3TaEmD",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "saidivakar.kagitha@brightspeed.com",
-    emailPassword: "+e++411B+2dW"
-},
-{
-    name: "Saikamal Bogavalli",
-    username: "saikamal.bogavalli",
-    password: "Lz6Jo!7KyEvX",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "saikamal.bogavalli@brightspeed.com",
-    emailPassword: "3!n3fN9k3+v!"
-},
-{
-    name: "Sneha Sindhura Rangu",
-    username: "sneha.sindhurarangu",
-    password: "Jp6Qi\"0PqUeW",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "snehasindhura.rangu@brightspeed.com",
-    emailPassword: "3GC2b2+8+i!+"
-},
-{
-    name: "Bala Manikanta Swamy Vemula",
-    username: "vemula.balamanikanta",
-    password: "Cy0Lr)9UzHmA",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "vemulabalamanikanta@brightspeed.com",
-    emailPassword: "~d3+!+3B1C1d"
-},
-{
-    name: "Sandeep Gummidi",
-    username: "gummidinvssandeep.kumar",
-    password: "Ph5Ux/5JhUfV",
-    userId: "No access",
-    filedGlasspass: "No access",
-    email: "gummidinvssandeep.ku@brightspeed.com",
-    emailPassword: "7B1p2b1+2G!g"
-}
+    // Brightspeed user data
+    const brightspeedUserData = [
+        {
+            name: "R G Prasad",
+            username: "govinda.reddi",
+            password: "9*1&mDV5BvSm",
+            userId: "CHB5WK00000965",
+            filedGlasspass: "Dhanu@2017"
+        },
+        {
+            name: "Bhushan G",
+            username: "bhushan.gangireddy",
+            password: "7K&8Cb30XGb#",
+            userId: "CHB5WK00000964",
+            filedGlasspass: "Gangi1479@7"
+        },
+        {
+            name: "Rakesh K",
+            username: "rakeshkumar.sangaru",
+            password: "M&$4q81T",
+            userId: "CHB5WK00001221",
+            filedGlasspass: "Rocky@04"
+        },
+        {
+            name: "Laxman",
+            username: "lakshmana.gadi",
+            password: "1M&ZQ3k1",
+            userId: "CHB5WK00001220",
+            filedGlasspass: "Lucky@86"
+        },
+        {
+            name: "Ravi Gurla",
+            username: "ravi.gurla",
+            password: "8a2%5D43",
+            userId: "CHB5WK00001410",
+            filedGlasspass: "Amma@1410"
+        },
+        {
+            name: "Ravi Kalyanam",
+            username: "ravi.kalyanam",
+            password: "jz&K138F",
+            userId: "CHB5WK00001409",
+            filedGlasspass: "Kravi$2245"
+        },
+        {
+            name: "Divya jyothi V",
+            username: "divyajyothi.varipilli",
+            password: "l92)3Sk!",
+            userId: "CHB5WK00003149",
+            filedGlasspass: "Divya07272"
+        },
+        {
+            name: "Vamshi Vattela",
+            username: "vamshi.vattela",
+            password: "e21e2G\"7",
+            userId: "CHB5WK00003148",
+            filedGlasspass: "Cent#1002@1"
+        },
+        {
+            name: "Trinadh Pallela",
+            username: "trinadh.pallela",
+            password: "aR<8344%",
+            userId: "CHB5WK00003150",
+            filedGlasspass: "sUDHA@03"
+        },
+        {
+            name: "Santosh kumar K",
+            username: "santhosh.kenguva",
+            password: "1U5c#T/6",
+            userId: "CHB5WK00003147",
+            filedGlasspass: "Dravid@16"
+        },
+        {
+            name: "Uma Killi",
+            username: "uma.killi",
+            password: "AeN6Xx&3",
+            userId: "CHB5WK00004314",
+            filedGlasspass: "Hensika@122"
+        },
+        {
+            name: "Nagaraju Sutari",
+            username: "nagaraju.sutari",
+            password: "QiP9Yi,6",
+            userId: "CHB5WK00004313",
+            filedGlasspass: "Naga@8244"
+        },
+        {
+            name: "Nikhil Maddila",
+            username: "nikhil.maddila",
+            password: "UiG3Yt#3",
+            userId: "CHB5WK00004312",
+            filedGlasspass: "Nikky19561"
+        },
+        {
+            name: "Kusuma Gompa",
+            username: "kusuma.gompa",
+            password: "KlW8Vh'2",
+            userId: "CHB5WK00004315",
+            filedGlasspass: "Chinnari@266"
+        },
+        {
+            name: "Satyavathi V",
+            username: "satyavathi.valireddi",
+            password: "KrI4Fk*5",
+            userId: "CHB5WK00004316",
+            filedGlasspass: "Sanvi@122"
+        },
+        {
+            name: "Srikanth",
+            username: "No access",
+            password: "No access",
+            userId: "CHB5WK00009411",
+            filedGlasspass: "Cnsw-2168"
+        },
+        {
+            name: "Murali",
+            username: "No access",
+            password: "No access",
+            userId: "CHB5WK00009410",
+            filedGlasspass: "Cnsw-2166"
+        },
+        {
+            name: "Gous",
+            username: "No access",
+            password: "No access",
+            userId: "CHB5WK00009412",
+            filedGlasspass: "Cnsw-2175"
+        },
+        {
+            name: "Maheswari",
+            username: "No access",
+            password: "No access",
+            userId: "CHB5WK00009409",
+            filedGlasspass: "Cnsw-1677"
+        },
+        {
+            name: "Nandini",
+            username: "No access",
+            password: "No access",
+            userId: "CHB5WK00009598",
+            filedGlasspass: "Cnsw-1676"
+        },
+        {
+            name: "Apoorva Rao",
+            username: "chodavarapu.apoorvarao",
+            password: "Su3Wo!9EhQkU",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "chodavarapuapoorva.r@brightspeed.com",
+            emailPassword: "+3i1~B1~5Jx!"
+        },
+        {
+            name: "Nagamani Kola",
+            username: "kola.nagamani",
+            password: "Bw5Of&6VgAmI",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "kola.nagamani@brightspeed.com",
+            emailPassword: "2+!KU2z14!+h"
+        },
+        {
+            name: "Rajesh Thamada",
+            username: "rajesh.thamada",
+            password: "Gd0Pv!1XfEyT",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "rajesh.thamada@brightspeed.com",
+            emailPassword: "P342!~c!eE4!"
+        },
+        {
+            name: "Lavakusa",
+            username: "surla.lavakusa",
+            password: "Zg7Xk-2HhCvD",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "surla.lavakusa@brightspeed.com",
+            emailPassword: "k+2113cU~I~!"
+        },
+        {
+            name: "Durga Sai Teja Nagesetti",
+            username: "durgasai.tejanagesetti",
+            password: "Fm0Zy%9GjFeA",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "durgasaiteja.nageset@brightspeed.com",
+            emailPassword: "L4J!2g~b!1?3"
+        },
+        {
+            name: "Premkumar S",
+            username: "premkumar.saragadam",
+            password: "Bp0Ww,3EnPzR",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "premkumar.saragadam@brightspeed.com",
+            emailPassword: "4C!k24+Ce1!!"
+        },
+        {
+            name: "Yasaswani B",
+            username: "yasaswani.basanaboyina",
+            password: "Nf1Ps$9HxOcI",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "yasaswani.basanaboyi@brightspeed.com",
+            emailPassword: "F7d5!8?g!+C2"
+        },
+        {
+            name: "Suryanarayana K",
+            username: "suryanarayana.kotipa",
+            password: "Xb7Ir(8HpMwH",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "suryanarayana.kotipa@brightspeed.com",
+            emailPassword: "!q!Ek4J24!8+"
+        },
+        {
+            name: "Mahalaxmi Adinarayana",
+            username: "adinarayana.mahalaxmi",
+            password: "Fj7Rl&3WvRcI",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "adinarayana.mahalaxm@brightspeed.com",
+            emailPassword: "3J1Ih?~6!C2B"
+        },
+        {
+            name: "Gummadla Venkatesh",
+            username: "gummadla.venkatesh",
+            password: "Ri7Df%3LbLsY",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "gummadla.venkatesh@brightspeed.com",
+            emailPassword: "+724fj+ET5?!"
+        },
+        {
+            name: "Kesava Kumar Bhatta",
+            username: "kesavakumar.bhatta",
+            password: "Yh9Dk\"4HuCaI",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "kesavakumar.bhatta@brightspeed.com",
+            emailPassword: "3+G5!!+B5cj2"
+        },
+        {
+            name: "Mary Manuja Beereddy",
+            username: "marymanuja.beereddy",
+            password: "Mz7Cy,3NhFfF",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "marymanuja.beereddy@brightspeed.com",
+            emailPassword: "!jB33~!+O7j1"
+        },
+        {
+            name: "Vasu Medaboina",
+            username: "medaboina.vasu",
+            password: "Bd6Ob.2GeOvO",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "medaboina.vasu@brightspeed.com",
+            emailPassword: "!1S!?~1Bdl54"
+        },
+        {
+            name: "Vinay Nallapu",
+            username: "nallapu.vinay",
+            password: "Pn9Pm*7EeGpY",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "nallapu.vinay@brightspeed.com",
+            emailPassword: "1!4+e!C11k!C"
+        },
+        {
+            name: "Prabhas Pradhana",
+            username: "prabhas.pradhana",
+            password: "Ay4Zj'3NaKjN",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "prabhas.pradhana@brightspeed.com",
+            emailPassword: "?2!3E!1d!3Gf"
+        },
+        {
+            name: "Rajlaxmi Baral",
+            username: "rajlaxmi.baral",
+            password: "Gw9Up%3FnTdU",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "rajlaxmi.baral@brightspeed.com",
+            emailPassword: "2v?5!I!1bB!7"
+        },
+        {
+            name: "Rukmini Singamsetti",
+            username: "rukmini.singamsetti",
+            password: "Ek8Ih&9YiHrY",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "rukmini.singamsetti@brightspeed.com",
+            emailPassword: "Kk1K!+?1h1!6"
+        },
+        {
+            name: "Divakar Kagitha",
+            username: "saidivakar.kagitha",
+            password: "Yq3Zy'3TaEmD",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "saidivakar.kagitha@brightspeed.com",
+            emailPassword: "+e++411B+2dW"
+        },
+        {
+            name: "Saikamal Bogavalli",
+            username: "saikamal.bogavalli",
+            password: "Lz6Jo!7KyEvX",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "saikamal.bogavalli@brightspeed.com",
+            emailPassword: "3!n3fN9k3+v!"
+        },
+        {
+            name: "Sneha Sindhura Rangu",
+            username: "sneha.sindhurarangu",
+            password: "Jp6Qi\"0PqUeW",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "snehasindhura.rangu@brightspeed.com",
+            emailPassword: "3GC2b2+8+i!+"
+        },
+        {
+            name: "Bala Manikanta Swamy Vemula",
+            username: "vemula.balamanikanta",
+            password: "Cy0Lr)9UzHmA",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "vemulabalamanikanta@brightspeed.com",
+            emailPassword: "~d3+!+3B1C1d"
+        },
+        {
+            name: "Sandeep Gummidi",
+            username: "gummidinvssandeep.kumar",
+            password: "Ph5Ux/5JhUfV",
+            userId: "No access",
+            filedGlasspass: "No access",
+            email: "gummidinvssandeep.ku@brightspeed.com",
+            emailPassword: "7B1p2b1+2G!g"
+        }
 
-        ];
+    ];
 
-        // Permit links data
-        const permitLinksData = [
-            {
-                name: "SC DOT Road Searching",
-                url: "https://ris.scdot.org/RoadwayInformationStreetFinder.aspx"
-            },
-            {
-                name: "SC DOT Files Downloading",
-                url: "https://falcon.scdot.org/falconwebv4/default.aspx"
-            },
-            {
-                name: "FLDOT Speed Limit",
-                url: "https://gis-fdot.opendata.arcgis.com/datasets/fdot::maximum-speed-limit-tda/explore?location=29.745019%2C-82.607324%2C19.00"
-            },
-            {
-                name: "Alachua County",
-                url: "https://beacon.schneidercorp.com/Application.aspx?AppID=1081&LayerID=26490&PageTypeID=1&PageID=10767"
-            },
-            {
-                name: "PEN",
-                url: "https://www.arcgis.com/apps/mapviewer/index.html?layers=df6f5fb88b294e1299a1f33e8b52532b&layerId=119"
-            },
-            {
-                name: "All Florida County Roads",
-                url: "https://gis-fdot.opendata.arcgis.com/datasets/3753fa52d2f242f5a35a07d1f09caed9_0/explore?location=28.247525%2C-81.301370%2C15.70"
-            },
-            {
-                name: "State Roads Florida",
-                url: "https://gis-fdot.opendata.arcgis.com/datasets/d8ce6b8eee2646e6a0b534281e0391a0_0/explore?location=29.699614%2C-81.558294%2C11.08"
-            },
-            {
-                name: "Escambia County",
-                url: "https://experience.arcgis.com/experience/07874bfbf448415eacc8e3c639d53b81/"
-            },
-            {
-                name: "Pinellas County",
-                url: "https://experience.arcgis.com/experience/68137ff2d30b4a47b52408c1162f8b06"
-            },
-            {
-                name: "City of Alachua",
-                url: "https://www.arcgis.com/apps/Embed/index.html?webmap=cf8401dfe84f40af8561560cdd34a074&extent=-82.5915,29.7202,-82.338,29.8436&zoom=true&scale=true&details=true&legendlayers=true&active_panel=legend&basemap_gallery=true&disable_scroll=false&theme=light"
-            },
-            {
-                name: "NCDOT RoadNC RoadData",
-                url: "https://ncdot.maps.arcgis.com/home/webmap/viewer.html?webmap=5d3ad78971714a30be7ff97fd580e4d5"
-            },
-            {
-                name: "NM Parcels",
-                url: "https://www.acres.com/plat-map/map/nm/rio-arriba-county-nm?lat=36.004324&lng=-105.9242101&zoom=17.87"
-            },
-            {
-                name: "GeoPI",
-                url: "https://www.dot.ga.gov/applications/geopi/Pages/Search.aspx"
-            },
-            {
-                name: "IOWA DOT",
-                url: "https://511ia.org/search/roadway=IA+2/@-95.83071,40.61951,-91.39373,40.76131/@-92.15528,40.65799,15?show=iowaAppIncident,iowaAppRoadwork,weatherWarningsAreaEvents,weatherRadar,mileMarkers,otherStateInfo&nlp=true"
-            },
-            {
-                name: "RR Crossing and Type",
-                url: "https://fragis.fra.dot.gov/GISFRASafety/"
-            },
-            {
-                name: "RailRoad Owner Info",
-                url: "https://safetydata.fra.dot.gov/OfficeofSafety/PublicSite/Crossing/Crossing.aspx"
-            }
-          
-        ];
+    // Permit links data
+    const permitLinksData = [
+        {
+            name: "SC DOT Road Searching",
+            url: "https://ris.scdot.org/RoadwayInformationStreetFinder.aspx"
+        },
+        {
+            name: "SC DOT Files Downloading",
+            url: "https://falcon.scdot.org/falconwebv4/default.aspx"
+        },
+        {
+            name: "FLDOT Speed Limit",
+            url: "https://gis-fdot.opendata.arcgis.com/datasets/fdot::maximum-speed-limit-tda/explore?location=29.745019%2C-82.607324%2C19.00"
+        },
+        {
+            name: "Alachua County",
+            url: "https://beacon.schneidercorp.com/Application.aspx?AppID=1081&LayerID=26490&PageTypeID=1&PageID=10767"
+        },
+        {
+            name: "PEN",
+            url: "https://www.arcgis.com/apps/mapviewer/index.html?layers=df6f5fb88b294e1299a1f33e8b52532b&layerId=119"
+        },
+        {
+            name: "All Florida County Roads",
+            url: "https://gis-fdot.opendata.arcgis.com/datasets/3753fa52d2f242f5a35a07d1f09caed9_0/explore?location=28.247525%2C-81.301370%2C15.70"
+        },
+        {
+            name: "State Roads Florida",
+            url: "https://gis-fdot.opendata.arcgis.com/datasets/d8ce6b8eee2646e6a0b534281e0391a0_0/explore?location=29.699614%2C-81.558294%2C11.08"
+        },
+        {
+            name: "Escambia County",
+            url: "https://experience.arcgis.com/experience/07874bfbf448415eacc8e3c639d53b81/"
+        },
+        {
+            name: "Pinellas County",
+            url: "https://experience.arcgis.com/experience/68137ff2d30b4a47b52408c1162f8b06"
+        },
+        {
+            name: "City of Alachua",
+            url: "https://www.arcgis.com/apps/Embed/index.html?webmap=cf8401dfe84f40af8561560cdd34a074&extent=-82.5915,29.7202,-82.338,29.8436&zoom=true&scale=true&details=true&legendlayers=true&active_panel=legend&basemap_gallery=true&disable_scroll=false&theme=light"
+        },
+        {
+            name: "NCDOT RoadNC RoadData",
+            url: "https://ncdot.maps.arcgis.com/home/webmap/viewer.html?webmap=5d3ad78971714a30be7ff97fd580e4d5"
+        },
+        {
+            name: "NM Parcels",
+            url: "https://www.acres.com/plat-map/map/nm/rio-arriba-county-nm?lat=36.004324&lng=-105.9242101&zoom=17.87"
+        },
+        {
+            name: "GeoPI",
+            url: "https://www.dot.ga.gov/applications/geopi/Pages/Search.aspx"
+        },
+        {
+            name: "IOWA DOT",
+            url: "https://511ia.org/search/roadway=IA+2/@-95.83071,40.61951,-91.39373,40.76131/@-92.15528,40.65799,15?show=iowaAppIncident,iowaAppRoadwork,weatherWarningsAreaEvents,weatherRadar,mileMarkers,otherStateInfo&nlp=true"
+        },
+        {
+            name: "RR Crossing and Type",
+            url: "https://fragis.fra.dot.gov/GISFRASafety/"
+        },
+        {
+            name: "RailRoad Owner Info",
+            url: "https://safetydata.fra.dot.gov/OfficeofSafety/PublicSite/Crossing/Crossing.aspx"
+        }
 
-        // Global variables
-        let currentUserData = windstreamUserData;
-        let filteredUsers = [...currentUserData];
-        let selectedUser = null;
-        let currentModalType = 'windstream';
+    ];
 
-        // Wait for DOM to be fully loaded
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log('DOM Content Loaded - Initializing modals');
+    // Global variables
+    let currentUserData = windstreamUserData;
+    let filteredUsers = [...currentUserData];
+    let selectedUser = null;
+    let currentModalType = 'windstream';
 
-            // DOM elements
-            const userDetailsBtn = document.getElementById('userDetailsBtn');
-            const permitLinksBtn = document.getElementById('permitLinksBtn');
-            const brightspeedUserDetailsBtn = document.getElementById('brightspeedUserDetailsBtn');
-            const userModal = document.getElementById('userModal');
-            const permitLinksModal = document.getElementById('permitLinksModal');
-            const closeModalBtn = document.getElementById('closeModal');
-            const closePermitModalBtn = document.getElementById('closePermitModal');
-            const searchInput = document.getElementById('searchInput');
-            const userListContainer = document.getElementById('userListContainer');
-            const userDetailsContainer = document.getElementById('userDetailsContainer');
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM Content Loaded - Initializing modals');
 
-            // Verify elements exist
-            if (!userDetailsBtn || !permitLinksBtn || !brightspeedUserDetailsBtn) {
-                console.error('Some buttons not found');
-                return;
-            }
-            if (!userModal || !permitLinksModal) {
-                console.error('Modal elements not found');
-                return;
-            }
+        // DOM elements
+        const userDetailsBtn = document.getElementById('userDetailsBtn');
+        const permitLinksBtn = document.getElementById('permitLinksBtn');
+        const brightspeedUserDetailsBtn = document.getElementById('brightspeedUserDetailsBtn');
+        const userModal = document.getElementById('userModal');
+        const permitLinksModal = document.getElementById('permitLinksModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const closePermitModalBtn = document.getElementById('closePermitModal');
+        const searchInput = document.getElementById('searchInput');
+        const userListContainer = document.getElementById('userListContainer');
+        const userDetailsContainer = document.getElementById('userDetailsContainer');
 
-            console.log('All elements found, setting up event listeners');
+        // Verify elements exist
+        if (!userDetailsBtn || !permitLinksBtn || !brightspeedUserDetailsBtn) {
+            console.error('Some buttons not found');
+            return;
+        }
+        if (!userModal || !permitLinksModal) {
+            console.error('Modal elements not found');
+            return;
+        }
 
-            // Event listeners for user details
-            userDetailsBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('User Details button clicked');
-                openUserModal('windstream');
-            });
+        console.log('All elements found, setting up event listeners');
 
-            brightspeedUserDetailsBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Brightspeed User Details button clicked');
-                openUserModal('brightspeed');
-            });
-
-            // Event listener for permit links
-            permitLinksBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Permit Links button clicked');
-                openPermitLinksModal();
-            });
-
-            // Close modal event listeners
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closeUserModal();
-                });
-            }
-
-            if (closePermitModalBtn) {
-                closePermitModalBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closePermitLinksModal();
-                });
-            }
-
-            if (searchInput) {
-                searchInput.addEventListener('input', handleSearch);
-            }
-
-            // Close modals when clicking backdrop
-            userModal.addEventListener('click', function (e) {
-                if (e.target === userModal || e.target.classList.contains('modal-backdrop')) {
-                    closeUserModal();
-                }
-            });
-
-            permitLinksModal.addEventListener('click', function (e) {
-                if (e.target === permitLinksModal || e.target.classList.contains('modal-backdrop')) {
-                    closePermitLinksModal();
-                }
-            });
-
-            // Close modals with Escape key
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
-                    if (userModal.classList.contains('show')) {
-                        closeUserModal();
-                    }
-                    if (permitLinksModal.classList.contains('show')) {
-                        closePermitLinksModal();
-                    }
-                }
-            });
-
-            // Initialize user details placeholder
-            showPlaceholder();
-            // Initialize permit links
-            renderPermitLinks();
+        // Event listeners for user details
+        userDetailsBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('User Details button clicked');
+            openUserModal('windstream');
         });
 
-        // User Modal Functions
-        function openUserModal(type = 'windstream') {
-            console.log('Opening user modal');
-            const userModal = document.getElementById('userModal');
-            const searchInput = document.getElementById('searchInput');
-            const modalTitle = document.getElementById('modalTitle');
+        brightspeedUserDetailsBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Brightspeed User Details button clicked');
+            openUserModal('brightspeed');
+        });
 
-            currentModalType = type;
-            if (type === 'brightspeed') {
-                currentUserData = brightspeedUserData;
-                modalTitle.textContent = 'Brightspeed User Directory';
-                searchInput.placeholder = 'Search by name or username...';
-            } else {
-                currentUserData = windstreamUserData;
-                modalTitle.textContent = 'Windstream User Directory';
-                searchInput.placeholder = 'Search by name, email, or N99 ID...';
+        // Event listener for permit links
+        permitLinksBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Permit Links button clicked');
+            openPermitLinksModal();
+        });
+
+        // Close modal event listeners
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeUserModal();
+            });
+        }
+
+        if (closePermitModalBtn) {
+            closePermitModalBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closePermitLinksModal();
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', handleSearch);
+        }
+
+        // Close modals when clicking backdrop
+        userModal.addEventListener('click', function (e) {
+            if (e.target === userModal || e.target.classList.contains('modal-backdrop')) {
+                closeUserModal();
             }
+        });
 
+        permitLinksModal.addEventListener('click', function (e) {
+            if (e.target === permitLinksModal || e.target.classList.contains('modal-backdrop')) {
+                closePermitLinksModal();
+            }
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                if (userModal.classList.contains('show')) {
+                    closeUserModal();
+                }
+                if (permitLinksModal.classList.contains('show')) {
+                    closePermitLinksModal();
+                }
+            }
+        });
+
+        // Initialize user details placeholder
+        showPlaceholder();
+        // Initialize permit links
+        renderPermitLinks();
+    });
+
+    // User Modal Functions
+    function openUserModal(type = 'windstream') {
+        console.log('Opening user modal');
+        const userModal = document.getElementById('userModal');
+        const searchInput = document.getElementById('searchInput');
+        const modalTitle = document.getElementById('modalTitle');
+
+        currentModalType = type;
+        if (type === 'brightspeed') {
+            currentUserData = brightspeedUserData;
+            modalTitle.textContent = 'Brightspeed User Directory';
+            searchInput.placeholder = 'Search by name or username...';
+        } else {
+            currentUserData = windstreamUserData;
+            modalTitle.textContent = 'Windstream User Directory';
+            searchInput.placeholder = 'Search by name, email, or N99 ID...';
+        }
+
+        filteredUsers = [...currentUserData];
+
+        if (userModal) {
+            userModal.classList.add('show');
+            document.body.classList.add('modal-open');
+            document.body.style.overflow = 'hidden';
+            renderUserList();
+            if (searchInput) {
+                setTimeout(() => searchInput.focus(), 100);
+            }
+            console.log('User modal opened successfully');
+        }
+    }
+
+    function closeUserModal() {
+        console.log('Closing user modal');
+        const userModal = document.getElementById('userModal');
+        const searchInput = document.getElementById('searchInput');
+
+        if (userModal) {
+            userModal.classList.remove('show');
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = 'unset';
+            selectedUser = null;
+            if (searchInput) {
+                searchInput.value = '';
+            }
             filteredUsers = [...currentUserData];
-
-            if (userModal) {
-                userModal.classList.add('show');
-                document.body.classList.add('modal-open');
-                document.body.style.overflow = 'hidden';
-                renderUserList();
-                if (searchInput) {
-                    setTimeout(() => searchInput.focus(), 100);
-                }
-                console.log('User modal opened successfully');
-            }
+            showPlaceholder();
+            console.log('User modal closed successfully');
         }
+    }
 
-        function closeUserModal() {
-            console.log('Closing user modal');
-            const userModal = document.getElementById('userModal');
-            const searchInput = document.getElementById('searchInput');
+    // Permit Links Modal Functions
+    function openPermitLinksModal() {
+        console.log('Opening permit links modal');
+        const permitLinksModal = document.getElementById('permitLinksModal');
 
-            if (userModal) {
-                userModal.classList.remove('show');
-                document.body.classList.remove('modal-open');
-                document.body.style.overflow = 'unset';
-                selectedUser = null;
-                if (searchInput) {
-                    searchInput.value = '';
-                }
-                filteredUsers = [...currentUserData];
-                showPlaceholder();
-                console.log('User modal closed successfully');
-            }
+        if (permitLinksModal) {
+            permitLinksModal.classList.add('show');
+            document.body.classList.add('modal-open');
+            document.body.style.overflow = 'hidden';
+            console.log('Permit links modal opened successfully');
         }
+    }
 
-        // Permit Links Modal Functions
-        function openPermitLinksModal() {
-            console.log('Opening permit links modal');
-            const permitLinksModal = document.getElementById('permitLinksModal');
+    function closePermitLinksModal() {
+        console.log('Closing permit links modal');
+        const permitLinksModal = document.getElementById('permitLinksModal');
 
-            if (permitLinksModal) {
-                permitLinksModal.classList.add('show');
-                document.body.classList.add('modal-open');
-                document.body.style.overflow = 'hidden';
-                console.log('Permit links modal opened successfully');
-            }
+        if (permitLinksModal) {
+            permitLinksModal.classList.remove('show');
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = 'unset';
+            console.log('Permit links modal closed successfully');
         }
+    }
 
-        function closePermitLinksModal() {
-            console.log('Closing permit links modal');
-            const permitLinksModal = document.getElementById('permitLinksModal');
+    function renderPermitLinks() {
+        const permitLinksBody = document.getElementById('permitLinksBody');
+        if (!permitLinksBody) return;
 
-            if (permitLinksModal) {
-                permitLinksModal.classList.remove('show');
-                document.body.classList.remove('modal-open');
-                document.body.style.overflow = 'unset';
-                console.log('Permit links modal closed successfully');
-            }
-        }
+        permitLinksBody.innerHTML = '';
 
-        function renderPermitLinks() {
-            const permitLinksBody = document.getElementById('permitLinksBody');
-            if (!permitLinksBody) return;
+        permitLinksData.forEach((link, index) => {
+            const linkItem = document.createElement('div');
+            linkItem.className = 'permit-link-item';
 
-            permitLinksBody.innerHTML = '';
-
-            permitLinksData.forEach((link, index) => {
-                const linkItem = document.createElement('div');
-                linkItem.className = 'permit-link-item';
-
-                linkItem.innerHTML = `
+            linkItem.innerHTML = `
                     <div class="permit-link-content">
                         <div class="permit-link-number">${index + 1}</div>
                         <div class="permit-link-info">
@@ -861,75 +1844,75 @@
                         </div>
                     </div>
                     ${link.url ?
-                        `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="permit-visit-btn">
+                    `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="permit-visit-btn">
                             <i class="fas fa-globe"></i>
                             Visit
                         </a>` : ''
-                    }
+                }
                 `;
 
-                permitLinksBody.appendChild(linkItem);
-            });
+            permitLinksBody.appendChild(linkItem);
+        });
+    }
+
+    // User Details Functions
+    function handleSearch(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        console.log('Searching for:', searchTerm);
+
+        if (currentModalType === 'brightspeed') {
+            filteredUsers = currentUserData.filter(user =>
+                user.name.toLowerCase().includes(searchTerm) ||
+                user.username.toLowerCase().includes(searchTerm)
+            );
+        } else {
+            filteredUsers = currentUserData.filter(user =>
+                user.name.toLowerCase().includes(searchTerm) ||
+                user.windstreamEmail.toLowerCase().includes(searchTerm) ||
+                user.n99Id.toLowerCase().includes(searchTerm)
+            );
         }
 
-        // User Details Functions
-        function handleSearch(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            console.log('Searching for:', searchTerm);
+        console.log('Filtered users:', filteredUsers.length);
+        renderUserList();
 
-            if (currentModalType === 'brightspeed') {
-                filteredUsers = currentUserData.filter(user =>
-                    user.name.toLowerCase().includes(searchTerm) ||
-                    user.username.toLowerCase().includes(searchTerm)
-                );
-            } else {
-                filteredUsers = currentUserData.filter(user =>
-                    user.name.toLowerCase().includes(searchTerm) ||
-                    user.windstreamEmail.toLowerCase().includes(searchTerm) ||
-                    user.n99Id.toLowerCase().includes(searchTerm)
-                );
-            }
-
-            console.log('Filtered users:', filteredUsers.length);
-            renderUserList();
-
-            if (selectedUser && !filteredUsers.find(user => user.name === selectedUser.name)) {
-                selectedUser = null;
-                showPlaceholder();
-            }
+        if (selectedUser && !filteredUsers.find(user => user.name === selectedUser.name)) {
+            selectedUser = null;
+            showPlaceholder();
         }
+    }
 
-        function renderUserList() {
-            const userListContainer = document.getElementById('userListContainer');
-            if (!userListContainer) return;
+    function renderUserList() {
+        const userListContainer = document.getElementById('userListContainer');
+        if (!userListContainer) return;
 
-            userListContainer.innerHTML = '';
+        userListContainer.innerHTML = '';
 
-            if (filteredUsers.length === 0) {
-                userListContainer.innerHTML = `
+        if (filteredUsers.length === 0) {
+            userListContainer.innerHTML = `
                     <div style="text-align: center; padding: 40px; color: #666;">
                         <p>No users found matching your search</p>
                     </div>
                 `;
-                return;
-            }
-
-            filteredUsers.forEach(user => {
-                const userItem = createUserItem(user);
-                userListContainer.appendChild(userItem);
-            });
+            return;
         }
 
-        function createUserItem(user) {
-            const userItem = document.createElement('div');
-            userItem.className = 'user-item';
-            if (selectedUser && selectedUser.name === user.name) {
-                userItem.classList.add('selected');
-            }
+        filteredUsers.forEach(user => {
+            const userItem = createUserItem(user);
+            userListContainer.appendChild(userItem);
+        });
+    }
 
-            const initials = getInitials(user.name);
+    function createUserItem(user) {
+        const userItem = document.createElement('div');
+        userItem.className = 'user-item';
+        if (selectedUser && selectedUser.name === user.name) {
+            userItem.classList.add('selected');
+        }
 
-            userItem.innerHTML = `
+        const initials = getInitials(user.name);
+
+        userItem.innerHTML = `
                 <div class="user-item-header">
                     <div class="user-avatar">${initials}</div>
                     <div class="user-info">
@@ -939,29 +1922,29 @@
                 </div>
             `;
 
-            userItem.addEventListener('click', () => selectUser(user));
-            return userItem;
-        }
+        userItem.addEventListener('click', () => selectUser(user));
+        return userItem;
+    }
 
-        function selectUser(user) {
-            selectedUser = user;
-            renderUserList();
-            renderUserDetails(user);
-        }
+    function selectUser(user) {
+        selectedUser = user;
+        renderUserList();
+        renderUserDetails(user);
+    }
 
-        function renderUserDetails(user) {
-            const userDetailsContainer = document.getElementById('userDetailsContainer');
-            if (!userDetailsContainer) return;
+    function renderUserDetails(user) {
+        const userDetailsContainer = document.getElementById('userDetailsContainer');
+        if (!userDetailsContainer) return;
 
-            const detailsContent = createUserDetailsContent(user);
-            userDetailsContainer.innerHTML = detailsContent;
-        }
+        const detailsContent = createUserDetailsContent(user);
+        userDetailsContainer.innerHTML = detailsContent;
+    }
 
-        function createUserDetailsContent(user) {
-            const initials = getInitials(user.name);
+    function createUserDetailsContent(user) {
+        const initials = getInitials(user.name);
 
-            if (currentModalType === 'brightspeed') {
-                return `
+        if (currentModalType === 'brightspeed') {
+            return `
                      <div class="user-details-content show">
             <div class="user-profile-header">
                 <div class="user-profile-avatar">${initials}</div>
@@ -975,8 +1958,8 @@
             ${createBrightspeedSecuritySection(user)}
         </div>
                 `;
-            } else {
-                return `
+        } else {
+            return `
                     <div class="user-details-content show">
                         <div class="user-profile-header">
                             <div class="user-profile-avatar">${initials}</div>
@@ -990,11 +1973,11 @@
                         ${createSecuritySection(user)}
                     </div>
                 `;
-            }
         }
+    }
 
-        function createBrightspeedUserSection(user) {
-            return `
+    function createBrightspeedUserSection(user) {
+        return `
                 <div class="user-details-section">
                     <div class="section-header">
                         <h4>IQGeo Access Login Details</h4>
@@ -1009,10 +1992,10 @@
                     </div>
                 </div>
             `;
-        }
+    }
 
-        function createBrightspeedSecuritySection(user) {
-            return `
+    function createBrightspeedSecuritySection(user) {
+        return `
                 <div class="user-details-section">
                     <div class="section-header">
                         <h4>FieldGlass Access Login Details</h4>
@@ -1027,9 +2010,9 @@
                     </div>
                 </div>
             `;
-        }
-        function createEmailInfoSectionForBrightspeed(user) {
-    return `
+    }
+    function createEmailInfoSectionForBrightspeed(user) {
+        return `
         <div class="user-details-section">
             <div class="section-header">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #10b981;">
@@ -1048,9 +2031,9 @@
             </div>
         </div>
     `;
-}
-        function createEmailSection(user) {
-            return `
+    }
+    function createEmailSection(user) {
+        return `
                 <div class="user-details-section">
                     <div class="section-header">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #10b981;">
@@ -1064,10 +2047,10 @@
                     </div>
                 </div>
             `;
-        }
+    }
 
-        function createSystemAccessSection(user) {
-            return `
+    function createSystemAccessSection(user) {
+        return `
                 <div class="user-details-section">
                     <div class="section-header">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #8b5cf6;">
@@ -1081,10 +2064,10 @@
                     </div>
                 </div>
             `;
-        }
+    }
 
-        function createSecuritySection(user) {
-            return `
+    function createSecuritySection(user) {
+        return `
                 <div class="user-details-section">
                     <div class="section-header">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ef4444;">
@@ -1106,13 +2089,13 @@
                     </div>
                 </div>
             `;
-        }
+    }
 
-        function showPlaceholder() {
-            const userDetailsContainer = document.getElementById('userDetailsContainer');
-            if (!userDetailsContainer) return;
+    function showPlaceholder() {
+        const userDetailsContainer = document.getElementById('userDetailsContainer');
+        if (!userDetailsContainer) return;
 
-            userDetailsContainer.innerHTML = `
+        userDetailsContainer.innerHTML = `
                 <div class="user-details-placeholder">
                     <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
@@ -1120,16 +2103,16 @@
                     <p>Select a user to view details</p>
                 </div>
             `;
-        }
+    }
 
-        function getInitials(name) {
-            return name
-                .split(' ')
-                .map(word => word.charAt(0).toUpperCase())
-                .slice(0, 2)
-                .join('');
-        }
-    </script>
-    </body>
+    function getInitials(name) {
+        return name
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase())
+            .slice(0, 2)
+            .join('');
+    }
+</script>
+</body>
 
 </html>
